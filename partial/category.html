@@ -1,0 +1,35 @@
+<div class="row" style="margin-top: 8px;">
+    <div class="col-lg-6">
+        <form class="form-inline" onsubmit="return false">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <i class="glyphicon glyphicon-cog"></i>
+                    </div>
+                    <input type="text" class="form-control" ng-model="newName" placeholder="Category name">
+                </div>
+            </div>
+        </form>
+        <div>
+            <span>{{newName}}</span>
+        </div>
+    </div>
+    <div class="col-lg-2">
+        <button type="submit" class="btn btn-primary" ng-click="saveCategory(newName)">Save Category</button>
+    </div>
+
+    <div class="col-lg-8">
+        <div class="table-responsive table-bordered" style="margin-top: 25px;">
+            <table class="table">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                </tr>
+                <tr ng-repeat="cat in categories">
+                    <td>{{cat.id}}</td>
+                    <td>{{cat.name}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

@@ -7,7 +7,9 @@ require.config({
         'bootstrap': 'vendors/bootstrap.min',
         uiRouter: 'vendors/angular-ui-router.min',
         'main-controller': 'app/main-controller',
-        mapService: 'app/map-service'
+        mapService: 'app/map-service',
+        dataService: 'app/data-service',
+        ngStorage: 'vendors/angular-storage.min'
     },
     shim: {
         angular: {
@@ -29,6 +31,12 @@ require.config({
         },
         mapService: {
             deps: ['jquery']
+        },
+        dataService: {
+            deps: ['angular']
+        },
+        ngStorage: {
+            deps: ['angular']
         }
     }
 });

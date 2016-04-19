@@ -2,15 +2,16 @@ require([
     'angular',
     'jquery',
     'main-controller',
+    'dataService',
     'uiRouter'
-], function(angular, $, mainCntl){
-    var app = angular.module('WelldoneApp',['ui.router']);
+], function(angular, $, mainCntl, dataService){
+    var app = angular.module('WelldoneApp',['ui.router', 'ngStorage']);
     app.config(function($stateProvider){
         $stateProvider
-            .state('main',{
-                name:'main',
-                url:'/main',
-                template: '<div><h1>Hello Main</h1></div>'
+            .state('category',{
+                name:'category',
+                url:'/category',
+                templateUrl: 'partial/category.html'
             })
             .state('second', {
                 name: 'second',
@@ -19,6 +20,7 @@ require([
             })
     });
 
+    app.factory('dataService', dataService);
 
     app.controller('MainCntl', mainCntl);
 
