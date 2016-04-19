@@ -9,6 +9,7 @@
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 
 		<link href="css/styles.css" rel="stylesheet">
+        <script src="http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js&output=embed"></script>
         <script data-main="js/main" src="js/vendors/require.min.js"></script>
         <script src="js/conf/require.conf.js"></script>
 
@@ -17,7 +18,8 @@
         <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
 	</head>
- <body>
+    <body ng-controller="MainCntl">
+
 <!-- begin template -->
 <div class="navbar navbar-custom navbar-fixed-top">
  <div class="navbar-header"><a class="navbar-brand" href="#">Brand</a>
@@ -30,8 +32,8 @@
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
+        <li><a href="#" ng-click="goMain()">Main</a></li>
+        <li><a href="#" ng-click="goSecond()">Second</a></li>
         <li>&nbsp;</li>
       </ul>
       <form class="navbar-form">
@@ -55,75 +57,24 @@
     </div>
 </div>
 
-<div id="map-canvas"></div>
-<div class="container-fluid" id="main">
-  <div class="row">
-  	<div class="col-xs-8" id="left">
-    
-      <h2>Bootstrap Google Maps Demo</h2>
-      
-      <!-- item list -->
-      <div class="panel panel-default">
-        <div class="panel-heading"><a href="">Item heading</a></div>
-      </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-        Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-        dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-        Aliquam in felis sit amet augue.</p>
-      
-      <hr>
-      
-      <div class="panel panel-default">
-        <div class="panel-heading"><a href="">Item heading</a></div>
-      </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-        Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-        dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-        Aliquam in felis sit amet augue.</p>
-      
-      <hr>
-      
-      <div class="panel panel-default">
-        <div class="panel-heading"><a href="">Item heading</a></div>
-      </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-        Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-        dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-        Aliquam in felis sit amet augue.</p>
-      
-      <hr>
-      
-      <div class="panel panel-default">
-        <div class="panel-heading"><a href="">Item heading</a></div>
-      </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-        Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-        dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-        Aliquam in felis sit amet augue.</p>
-      
-      <hr>
-      <!-- /item list -->
-      
-      <p>
-      <a href="http://www.bootply.com/render/129229">Demo</a> | <a href="http://bootply.com/129229">Source Code</a>
-      </p>
-      
-      <hr> 
-        
-      <p>
-      <a href="http://bootply.com" target="_ext" class="center-block btn btn-primary">More Bootstrap Snippets on Bootply</a>
-      </p>
-        
-      <hr>      
 
+<div class="container-fluid" id="main">
+    <div class="row">
+        <div class="col-xs-12">
+            <div id="map-canvas"></div>
+            <!--map-canvas will be postioned here--></div>
     </div>
-    <div class="col-xs-4"><!--map-canvas will be postioned here--></div>
-    
+    <div class="row">
+  	<div class="col-xs-8" id="left">
+        <div ui-view></div>
+    </div>
+
   </div>
 </div>
+
 <!-- end template -->
 
 	<!-- script references -->
-		<script src="http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js&output=embed"></script>
+
 	</body>
 </html>
