@@ -19,12 +19,17 @@ define([
             $state.go('category');
         };
 
-        $scope.goSecond  = function() {
-           $state.go('second');
+        $scope.goMain  = function() {
+            $state.go('main');
         };
 
         $scope.doEditCategory = function(catId) {
             $state.go('catedit', {catId: catId});
+        };
+
+        $scope.doDeleteCategory = function(id) {
+            dataService.deleteCategory(id);
+            $scope.categories = dataService.getCategories();
         };
 
         $scope.saveCategory = function(name) {

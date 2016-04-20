@@ -24,7 +24,7 @@
 <!-- begin template -->
 <div class="navbar navbar-custom navbar-fixed-top">
     <div class="navbar-header">
-         <a class="navbar-brand" href="#">myLocations</a>
+         <a class="navbar-brand" href="#" ng-bind="pageTitle">myLocations</a>
     </div>
 </div>
 
@@ -43,8 +43,12 @@
 </div>
 <footer class="footer">
     <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" apptouch="goCategory()" class="btn btn-primary">Category</button>
-        <button type="button" apptouch="goSecond()" class="btn btn-primary">Location</button>
+        <button type="button" apptouch="goCategory()" class="btn btn-primary">
+            <span class="glyphicon glyphicon-th-list"></span>
+        </button>
+        <button type="button" apptouch="goMain()" class="btn btn-primary">
+            <span class="glyphicon glyphicon-map-marker"></span>
+        </button>
     </div>
 </footer>
 <!-- end template -->

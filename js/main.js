@@ -13,15 +13,23 @@ require([
             .state('category',{
                 name:'category',
                 url:'/category',
-                templateUrl: 'partial/category.html'
+                templateUrl: 'partial/category.html',
+                data: {title: 'Categories'}
             })
             .state('catedit', editCategoryController)
-            .state('second', {
-                name: 'second',
-                url: '/second',
-                template: '<div><h1>Hello second</h1></div>'
+            .state('main',{
+                name: 'main',
+                url: '',
+                data: {title: 'myLocations'}
             })
+    });
 
+    app.run(function($rootScope){
+        $rootScope.$on('$stateChangeStart', function(event, toState){
+            if(toState.data.title) {
+                $rootScope.pageTitle = toState.data.title;
+            }
+        });
     });
 
     app.directive('apptouch', function() {

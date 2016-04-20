@@ -36,7 +36,7 @@ define([
                              return model.categories[i].id;
                          }
                      }
-                     var nextId = model.categories.length + 1;
+                     var nextId = model.categories[model.categories.length - 1].id + 1;
                      model.categories.push({
                          name: catName,
                          id: nextId
