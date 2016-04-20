@@ -9,7 +9,9 @@ require.config({
         'main-controller': 'app/main-controller',
         mapService: 'app/map-service',
         dataService: 'app/data-service',
-        ngStorage: 'vendors/angular-storage.min'
+        ngStorage: 'vendors/angular-storage.min',
+        ngTouch: 'vendors/angular-touch.min',
+        editcat: 'app/edit-category-controller'
     },
     shim: {
         angular: {
@@ -37,6 +39,12 @@ require.config({
         },
         ngStorage: {
             deps: ['angular']
+        },
+        ngTouch: {
+            deps:['angular']
+        },
+        editcat: {
+            deps: ['angular', 'uiRouter']
         }
     }
 });

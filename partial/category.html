@@ -3,32 +3,38 @@
         <form class="form-inline" onsubmit="return false">
             <div class="form-group">
                 <div class="input-group">
-                    <div class="input-group-addon">
-                        <i class="glyphicon glyphicon-cog"></i>
-                    </div>
                     <input type="text" class="form-control" ng-model="newName" placeholder="Category name">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" apptouch="saveCategory(newName)">
+                            <span class="glyphicon glyphicon-check"></span>
+                        </button>
+                    </span>
                 </div>
             </div>
         </form>
-        <div>
-            <span>{{newName}}</span>
-        </div>
     </div>
-    <div class="col-lg-2">
-        <button type="submit" class="btn btn-primary" ng-click="saveCategory(newName)">Save Category</button>
-    </div>
-
     <div class="col-lg-8">
-        <div class="table-responsive table-bordered" style="margin-top: 25px;">
+        <div class="table-responsive table-bordered" id="container">
             <table class="table">
-                <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                </tr>
-                <tr ng-repeat="cat in categories">
-                    <td>{{cat.id}}</td>
-                    <td>{{cat.name}}</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th colspan="2">Tools</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="cat in categories">
+                        <td>{{cat.id}}</td>
+                        <td>{{cat.name}}</td>
+                        <td>
+                            <button class="btn btn-warning" apptouch="doEditCategory(cat.id)"><span class="glyphicon glyphicon-pencil"></span></button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     </div>

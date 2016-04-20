@@ -66,3 +66,11 @@ body{
     bottom:0;
     overflow:hidden;
 }
+
+
+#container {
+    margin-top: 25px;
+	height: 280px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}

@@ -1,3 +1,25 @@
-.datepicker {
-    width:180px !important;
+
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 50px;
+    background-color: #168ccc;
+    padding-top: 10px;
+    text-align: center;
 }
+
+body {
+    overflow: hidden;
+}
+
+footer > div.btn-group {
+    margin-left: auto;
+}
+
+
+
+
+

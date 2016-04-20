@@ -74,6 +74,10 @@ define([
                     model.categories.splice(catNumber,1);
                     modelChanged();
                 }
+            },
+
+            getCategory: function(id) {
+                return findCategory(id, 'object');
             }
 
          };

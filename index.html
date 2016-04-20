@@ -9,6 +9,7 @@
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 
 		<link href="css/styles.css" rel="stylesheet">
+        <link href="css/app.css" rel="stylesheet">
         <script src="http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js&output=embed"></script>
         <script data-main="js/main" src="js/vendors/require.min.js"></script>
         <script src="js/conf/require.conf.js"></script>
@@ -22,19 +23,8 @@
 
 <!-- begin template -->
 <div class="navbar navbar-custom navbar-fixed-top">
- <div class="navbar-header"><a class="navbar-brand" href="#">myLocations</a>
-      <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-    </div>
-    <div class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li><a href="#" ng-click="goCategory()">Category</a></li>
-        <li><a href="#" ng-click="goSecond()">Second</a></li>
-        <li>&nbsp;</li>
-      </ul>
+    <div class="navbar-header">
+         <a class="navbar-brand" href="#">myLocations</a>
     </div>
 </div>
 
@@ -46,15 +36,22 @@
             <!--map-canvas will be postioned here--></div>
     </div>
     <div class="row">
-  	<div class="col-xs-8" id="left">
-        <div ui-view></div>
-    </div>
-
+        <div class="col-xs-12" id="left">
+            <div ui-view></div>
+        </div>
   </div>
 </div>
-
+<footer class="footer">
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" apptouch="goCategory()" class="btn btn-primary">Category</button>
+        <button type="button" apptouch="goSecond()" class="btn btn-primary">Location</button>
+    </div>
+</footer>
 <!-- end template -->
-
+<!--<ul>
+    <li><a href="#" ng-click="goCategory()">Category</a></li>
+    <li><a href="#" ng-click="goSecond()">Second</a></li>
+</ul>-->
 	<!-- script references -->
 
 	</body>
