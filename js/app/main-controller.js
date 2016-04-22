@@ -8,11 +8,20 @@ define([
         $scope.newName = '';
         $scope.currentEditCategory = undefined;
 
+        $scope.currentLocation = {};
+
         if(typeof $window.map === 'function') {
            $scope.map = $window.map();
            $scope.map.init();
+           $scope.map.click(function(coordinates){
+                $scope.$apply(function(){
+                    $scope.currentLocation.location = {
+                        lat: coordinates.lat(),
+                        lng: coordinates.lng()
+                    }
+                });
+           });
         }
-
 
         $scope.goCategory = function() {
             $scope.categories = dataService.getCategories();
@@ -20,7 +29,7 @@ define([
         };
 
         $scope.goMain  = function() {
-            $state.go('main');
+            $state.go('general');
         };
 
         $scope.doEditCategory = function(catId) {
@@ -39,6 +48,10 @@ define([
             } else {
                 alert('Please fill category name');
             }
+        };
+
+        $scope.saveLoaction = function(location) {
+            console.log(location);
         }
    }];
 });

@@ -13,14 +13,41 @@ require([
             .state('category',{
                 name:'category',
                 url:'/category',
-                templateUrl: 'partial/category.html',
+                views: {
+                    main: {
+                        templateUrl: 'partial/category.html'
+                    }
+                },
                 data: {title: 'Categories'}
             })
-            .state('catedit', editCategoryController)
-            .state('main',{
-                name: 'main',
+            .state('catedit', {
+                name: 'catedit',
+                url: '/catedit/:catId',
+                views: {
+                    main: editCategoryController
+                },
+                data : {title: 'Edit Category'}
+
+            })
+            .state('general',{
+                name: 'general',
                 url: '',
-                data: {title: 'myLocations'}
+                data: {title: 'myLocations'},
+                views: {
+                    menu: {
+                        templateUrl: 'partial/locations-menu.html'
+                    }
+                }
+            })
+            .state('newloc',{
+                name: 'newloc',
+                url: '/newloc',
+                data: {title: 'New Loaction'},
+                views: {
+                    main: {
+                        templateUrl: 'partial/new-location.html'
+                    }
+                }
             })
     });
 

@@ -5,6 +5,10 @@ define([
 
     };
 
+    var mapContainer = document.getElementById("map-canvas");
+    var map = undefined;
+    var currentMarker = undefined;
+
     $.extend(mapService, {
         init: function() {
             /* position Amsterdam */
@@ -16,14 +20,23 @@ define([
                 zoom: 13
             };
 
-            var marker = new google.maps.Marker({
-                position: latlng,
-                url: '/',
-                animation: google.maps.Animation.DROP
-            });
+            map = new google.maps.Map(mapContainer, mapOptions);
+        },
 
-            var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-            marker.setMap(map);
+        click: function(callback) {
+            map.addListener('click', function(evt){
+                if(currentMarker) {
+                    currentMarker.setMap(null);
+                }
+                currentMarker = new google.maps.Marker({
+                    position: evt.latLng,
+                    map: map
+                });
+                
+                if(typeof callback === 'function') {
+                    callback(evt.latLng)
+                }
+            });
         }
     });
 

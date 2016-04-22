@@ -2,8 +2,6 @@ define([],
 function(){
     'use strict';
     var editCategory = {
-        name: 'catedit',
-        url: '/catedit/:catId',
         templateUrl: 'partial/edit-category.html',
         controller: function ($scope, $stateParams, $state, dataService) {
             $scope.currentEditCategory = dataService.getCategory($stateParams.catId);

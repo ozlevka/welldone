@@ -78,6 +78,18 @@ define([
 
             getCategory: function(id) {
                 return findCategory(id, 'object');
+            },
+
+            getLocations: function() {
+                if(model.locations) {
+                    return model.locations;
+                } else {
+                   return [];
+                }
+            },
+
+            saveLocation: function() {
+
             }
 
          };
