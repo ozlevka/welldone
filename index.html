@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>myLocations</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+
+		<link href="css/styles.css" rel="stylesheet">
+        <link href="css/app.css" rel="stylesheet">
+        <script src="http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js&output=embed"></script>
+        <script data-main="js/main" src="js/vendors/require.min.js"></script>
+        <script src="js/conf/require.conf.js"></script>
+
+
+        <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+	</head>
+    <body ng-controller="MainCntl">
+
+<!-- begin template -->
+<div class="navbar navbar-custom navbar-fixed-top">
+    <div class="navbar-header">
+         <a class="navbar-brand" href="#" ng-bind="pageTitle">myLocations</a>
+    </div>
+</div>
+
+
+<div class="container-fluid" id="main">
+    <div class="row" id="mapRow">
+        <div class="col-xs-12">
+            <div id="map-canvas"></div>
+            <!--map-canvas will be postioned here--></div>
+    </div>
+    <div class="row" ng-show="menuShow" ng-cloak>
+        <div ui-view="menu" style="padding-left: 10px;"></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12" id="left">
+            <div ui-view="main"></div>
+        </div>
+  </div>
+</div>
+<footer class="footer">
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" apptouch="goCategory()" class="btn btn-primary">
+            <span class="glyphicon glyphicon-th-list"></span>
+        </button>
+        <button type="button" apptouch="goMain()" class="btn btn-primary">
+            <span class="glyphicon glyphicon-map-marker"></span>
+        </button>
+    </div>
+</footer>
+<!-- end template -->
+<!--<ul>
+    <li><a href="#" ng-click="goCategory()">Category</a></li>
+    <li><a href="#" ng-click="goSecond()">Second</a></li>
+</ul>-->
+	<!-- script references -->
+
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<div class="button-toolbar">
+    <div class="button-group" style="margin-top: 10px; margin-bottom: 10px;">
+        <button class="btn btn-primary" apptouch="doAddNewLocation()">
+            <i class="glyphicon glyphicon-check"></i>
+        </button>
+        <button class="btn btn-primary" apptouch="doGroupByCategory()"><i class="glyphicon glyphicon-th-list"></i></button>
+        <div class="btn-group">
+            <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+                Filter
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li ng-repeat="cat in categories">
+                    <a apptouch="doFilterCategory(cat.id)">{{cat.name}}</a>
+                </li>
+            </ul>
+        </div>
+        <button class="btn btn-primary">
+            <i class="glyphicon glyphicon-chevron-up" apptouch="doOrderAsc()"></i>
+        </button>
+        <button class="btn btn-primary">
+            <i class="glyphicon glyphicon-chevron-down" apptouch="doOrderDesc()"></i>
+        </button>
+        <button class="btn btn-primary" apptouch="clearAll()" ng-show="locationsFiltered"><i class="glyphicon glyphicon-remove-circle"></i></button>
+    </div>
+</div>

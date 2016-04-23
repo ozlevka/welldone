@@ -1,0 +1,17 @@
+<div class="col-lg-12 location-container">
+    <div class="panel panel-default" ng-repeat="obj in categoryGroupedLocations">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{obj.category.name}}</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table">
+                <tr class="location-row" style="cursor: pointer" ng-repeat="loc in obj.locations" apptouch="locationClick(loc)">
+                    <td>{{loc.name}}</td>
+                    <td>{{loc.address}}</td>
+                    <td><button class="btn btn-warning" apptouch="doEditLocation(loc)"><span class="glyphicon glyphicon-pencil"></span></button></td>
+                    <td><button class="btn btn-danger"><span class="glyphicon glyphicon-remove" apptouch="doDeleteLocation(loc)"></span></button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

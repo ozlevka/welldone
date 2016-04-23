@@ -1,0 +1,10 @@
+<div class="col-lg-12 location-container">
+    <table class="table">
+        <tr class="location-row" style="cursor: pointer" ng-repeat="loc in locations" apptouch="locationClick(loc)">
+            <td>{{loc.name}}</td>
+            <td>{{loc.address}}</td>
+            <td><button class="btn btn-warning" apptouch="doEditLocation(loc)"><span class="glyphicon glyphicon-pencil"></span></button></td>
+            <td><button class="btn btn-danger"><span class="glyphicon glyphicon-remove" apptouch="doDeleteLocation(loc)"></span></button></td>
+        </tr>
+    </table>
+</div>

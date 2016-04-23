@@ -1,0 +1,39 @@
+
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 50px;
+    background-color: #168ccc;
+    padding-top: 10px;
+    text-align: center;
+}
+
+body {
+    overflow: hidden;
+}
+
+footer > div.btn-group {
+    margin-left: auto;
+}
+
+
+.location-row:hover {
+    background-color: #c4e3f3;
+}
+
+.location-container {
+    height: 300px;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-right: 0;
+}
+
+ul.nav li {
+    width: 120px;
+}
+
+

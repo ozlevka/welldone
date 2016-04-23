@@ -1,0 +1,32 @@
+<form onsubmit="return false">
+    <div class="form-group" ng-class="{'has-error': nameError}">
+        <label class="control-label" for="locationName">Name</label>
+        <input class="form-control" id="locationName" placeholder="Name" ng-model="currentLocation.name">
+    </div>
+    <div class="form-group" ng-class="{'has-error': addressError}">
+        <label class="control-label" for="locationAddress">Address</label>
+        <input class="form-control" id="locationAddress" placeholder="Address" ng-model="currentLocation.address">
+    </div>
+    <div class="form-group" ng-class="{'has-error': categoryError}">
+        <label class="control-label" for="locationCategory">Category</label>
+        <select class="form-control input-sm" id="locationCategory" ng-model="currentLocation.category">
+            <option ng-repeat="cat in categories" value="{{cat.id}}">{{cat.name}}</option>
+        </select>
+    </div>
+    <div class="form-inline">
+        <p style="padding-left: 10px;" class="bg-primary">click on map for get coordinates</p>
+    </div>
+    <div class="form-inline">
+        <div class="form-group" ng-class="{'has-error': latError}">
+            <label class="control-label" for="locationLat">Lat:</label>
+            <input disabled type="text" style="width: 85px;" class="form-control" ng-model="currentLocation.location.lat" id="locationLat" placeholder="latitude">
+        </div>
+        <div class="form-group" ng-class="{'has-error': lngError}">
+            <label class="control-label" for="locationLng">Long:</label>
+            <input disabled class="form-control" style="width: 85px;" id="locationLng" ng-model="currentLocation.location.lng" placeholder="longitude">
+        </div>
+    </div>
+    <div class="form-inline" style="padding-top: 10px;">
+        <button class="btn btn-primary" apptouch="saveLocation(currentLocation)">Save</button>
+    </div>
+</form>
