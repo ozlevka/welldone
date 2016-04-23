@@ -1,3 +1,6 @@
+# Development is finished
+Please check app in link: http://ozlevka.github.io/welldone
+
 # Sample Application Description #
 * The sample application is called myLocations and it allows the user to maintain a list of categorized name locations.
 * The domain model contains two main entities, a Category and a Location. A Category has a single property: Name. A Location has the following properties: Name, Address, Coordinates, and Category.
