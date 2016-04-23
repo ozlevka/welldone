@@ -11,7 +11,8 @@ require.config({
         dataService: 'app/data-service',
         ngStorage: 'vendors/angular-storage.min',
         ngTouch: 'vendors/angular-touch.min',
-        editcat: 'app/edit-category-controller'
+        editcat: 'app/edit-category-controller',
+        underscore: 'vendors/underscore.min'
     },
     shim: {
         angular: {
@@ -45,6 +46,9 @@ require.config({
         },
         editcat: {
             deps: ['angular', 'uiRouter']
+        },
+        underscore: {
+            exports: ['_']
         }
     }
 });

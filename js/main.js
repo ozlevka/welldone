@@ -32,10 +32,13 @@ require([
             .state('general',{
                 name: 'general',
                 url: '',
-                data: {title: 'myLocations'},
+                data: {title: 'myLocations', menu:true },
                 views: {
                     menu: {
                         templateUrl: 'partial/locations-menu.html'
+                    },
+                    main: {
+                        templateUrl: 'partial/locations.html'
                     }
                 }
             })
@@ -49,12 +52,41 @@ require([
                     }
                 }
             })
+            .state('editloc',{
+                name: 'editloc',
+                url: '/editloc',
+                data: {title: 'Edit Loaction'},
+                views: {
+                    main: {
+                        templateUrl: 'partial/edit-location.html'
+                    }
+                }
+            })
+            .state('grploc', {
+                name: 'grploc',
+                url: '/grploc',
+                data: {title: 'Locations By Category', menu: true},
+                views: {
+                    menu: {
+                        templateUrl: 'partial/locations-menu.html'
+                    },
+                    main: {
+                        templateUrl: 'partial/grouped-location.html'
+                    }
+                }
+            })
     });
 
     app.run(function($rootScope){
         $rootScope.$on('$stateChangeStart', function(event, toState){
             if(toState.data.title) {
                 $rootScope.pageTitle = toState.data.title;
+                if(toState.data.menu) {
+                    $rootScope.menuShow = true;
+                } else {
+                    $rootScope.menuShow = false;
+                }
+
             }
         });
     });

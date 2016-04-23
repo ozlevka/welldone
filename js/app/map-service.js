@@ -37,6 +37,21 @@ define([
                     callback(evt.latLng)
                 }
             });
+        },
+
+        setLocation: function(location) {
+            if(currentMarker) {
+                currentMarker.setMap(null);
+            }
+
+            currentMarker = new google.maps.Marker({
+                map: map,
+                animation: google.maps.Animation.DROP,
+                position: location.location,
+                title: location.name
+            });
+
+            map.setCenter(location.location);
         }
     });
 

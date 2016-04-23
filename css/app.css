@@ -20,6 +20,20 @@ footer > div.btn-group {
 }
 
 
+.location-row:hover {
+    background-color: #c4e3f3;
+}
 
+.location-container {
+    height: 300px;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-right: 0;
+}
+
+ul.nav li {
+    width: 120px;
+}
 
 
